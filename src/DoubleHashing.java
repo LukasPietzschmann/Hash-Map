@@ -14,11 +14,11 @@ class DoubleHashing extends AbstractHashSequence {
   @Override
   public int first(Object key) {
     this.key = key;
-    return (func.compute(key) % func.size());
+    return (func.compute(key) % size());
   }
   
   @Override
   public int next() {
-    return (func.compute(key) + ++it * func2.compute(key)) % func2.size();
+    return (func.compute(key) + ++it * func2.compute(key)) % size();
   }
 }
