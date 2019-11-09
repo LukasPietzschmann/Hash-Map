@@ -6,7 +6,7 @@ class DoubleHashing extends AbstractHashSequence {
   private int it = 0;
   
   // Doppelte Streuung mit Streuwertfunktionen f1 und f2.
-  public DoubleHashing (HashFunction f1, HashFunction f2) {
+  public DoubleHashing(HashFunction f1, HashFunction f2) {
     super(f1);
     func2 = f2;
   }

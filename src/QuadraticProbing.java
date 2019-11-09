@@ -1,23 +1,21 @@
 // Sondierungssequenz gemäß quadratischer Sondierung
 // (Implementierung nur mit Ganzzahlarithmetik).
 class QuadraticProbing extends AbstractHashSequence {
-
-  private static int j;
-  private int first;
+  private int j = 0;
+  
   // Quadratische Sondierung mit Streuwertfunktion f.
-  public QuadraticProbing (HashFunction f) {
+  public QuadraticProbing(HashFunction f) {
     super(f);
-    j = 0;
   }
-
+  
   @Override
   public int first(Object key) {
-    return prev= func.compute(key);
+    return prev = func.compute(key);
   }
-
+  
   @Override
   public int next() {
-    j = j + 1;
+    j++;
     return (prev + j) % size();
   }
 }
