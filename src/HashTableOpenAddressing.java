@@ -1,16 +1,17 @@
-import java.util.concurrent.DelayQueue;
-import java.util.concurrent.LinkedBlockingDeque;
-
 // Implementierung von Streuwerttabellen mit offener Adressierung.
 class HashTableOpenAddressing implements HashTable {
+  private static final int contains = -3;
+  private static final int full = -2;
+  private static final int doesntContain = -1;
+  private static final int nothingRemembered = -1;
 
-  private HashSequence s;
+  private HashSequence sequence;
   private Object[] array;
 
   // Streuwerttabelle mit Sondierungsfunktion s.
-  public HashTableOpenAddressing (HashSequence s) {
-    this.s = s;
-    this.array = new Object[s.size()];
+  public HashTableOpenAddressing (HashSequence sequence) {
+    this.sequence = sequence;
+    this.array = new Entry[sequence.size()];
   }
 
   public int[] helperFunc(Object key)
@@ -21,24 +22,24 @@ class HashTableOpenAddressing implements HashTable {
     //-3 vorhanden
 
     int signal = 0;
-    int remembered = -1;
+    int remembered = nothingRemembered;
     int[] tuple = new int[2];
 
     //1
-    int index = s.first(key);
+    int index = sequence.first(key);
     do {
       //1.2
       if(array[index] == null)
       {
         //1.2.a
-        if(remembered == -1)
+        if(remembered == nothingRemembered)
         {
-          tuple[0] = -1;
+          tuple[0] = doesntContain;
           tuple[1] = index;
         }
         else //1.2.b
         {
-          tuple[0] = -1;
+          tuple[0] = doesntContain;
           tuple[1] = remembered;
         }
 
@@ -46,33 +47,33 @@ class HashTableOpenAddressing implements HashTable {
       }
 
       //3
-      if(array[index] instanceof DelMarker && remembered == -1)
+      if(array[index] instanceof DelMarker && remembered == nothingRemembered)
       {
         remembered = index;
       }
       //4
       if((array[index] != null) && !(array[index] instanceof DelMarker))
       {
-        tuple[0] = -3;
+        tuple[0] = contains;
         tuple[1] = index;
 
         return tuple;
       }
 
-      index = s.next();
+      index = sequence.next();
     }while(signal >= 0);
 
     //2
     if(remembered >= 0)
     {
-      tuple[0] = -1;
+      tuple[0] = doesntContain;
       tuple[1] = remembered;
 
       return  tuple;
     }
 
     //4
-    tuple[0] = -2;
+    tuple[0] = full;
     tuple[1] = -2;
 
     return tuple;
@@ -93,9 +94,9 @@ class HashTableOpenAddressing implements HashTable {
   @Override
   public Object get(Object key) {
     int[] tuple = helperFunc(key);
-    if(tuple[0] == -3 && tuple[])
+    if(tuple[0] == -3)
     {
-
+      return array[tuple[1]];
     }
     return null;
   }
