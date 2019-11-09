@@ -2,7 +2,7 @@
 class LinearProbing extends AbstractHashSequence {
   // Lineare Sondierung mit Streuwertfunktion f.
 
-  private static int prev;
+  private int prev;
 
 
   public LinearProbing (HashFunction f) {
