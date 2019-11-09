@@ -52,11 +52,13 @@ class HashTableChaining implements HashTable {
   
   @Override
   public void dump() {
-    for (ChainedList list : arr) {
-      if(list != null){
-      
+    String out = "";
+    for (int i = 0; i < arr.length; i++) {
+      if(arr[i] != null){
+        out += arr[i].dump(i);
       }
     }
+    System.out.println(out);
   }
 }
 
