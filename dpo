@@ -1,0 +1,22 @@
+[33mcommit 25fca102125056bef929f75e0d234d7e25e8e64d[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Merge: 65fbb92 adbcc70
+Author: Jannik <jannik.pflieger@gmail.com>
+Date:   Sat Nov 9 12:04:44 2019 +0100
+
+[33mcommit 65fbb92eeaacd868344cbef7bf31a0ae61e0f1f8[m
+Author: Jannik <jannik.pflieger@gmail.com>
+Date:   Sat Nov 9 12:01:08 2019 +0100
+
+    DivisionMethod&QuadraticProbing
+
+[33mcommit adbcc70d3acae3cddb60f2c0e6d35e232de6ff04[m
+Author: Luke <lukaspie00@gmail.com>
+Date:   Sat Nov 9 11:45:02 2019 +0100
+
+    Mult Method
+
+[33mcommit 38629b019fa5be7d2901baac079903f5779e1e37[m
+Author: Luke <lukaspie00@gmail.com>
+Date:   Thu Nov 7 11:51:43 2019 +0100
+
+    init commit
