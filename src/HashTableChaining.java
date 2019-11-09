@@ -36,7 +36,7 @@ class HashTableChaining implements HashTable {
     
     int i = func.compute(key);
     
-    return arr[i].search(key);
+    return arr[i].search(key).getVal();
   }
   
   @Override
