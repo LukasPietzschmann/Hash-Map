@@ -1,3 +1,6 @@
+//FIXME einzige bis jetzt funktionierende config: c d 100 (100 is variabel)
+
+
 // Einfaches Testprogramm.
 class WordCount {
   // Aufruf mit folgenden Kommandozeilenargumenten:
@@ -87,6 +90,7 @@ class WordCount {
       // Eintrag mit altem Wert plus 1 ersetzt.
       // (int-Werte werden bei Bedarf automatisch in Integer-
       // Objekte umgewandelt und umgekehrt.)
+
       Integer count = (Integer)tab.get(word);
       if (count == null) count = 0;
       tab.put(word, count + 1);

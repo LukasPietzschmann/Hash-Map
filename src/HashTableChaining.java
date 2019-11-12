@@ -36,6 +36,8 @@ class HashTableChaining implements HashTable {
     
     int i = func.compute(key);
     
+    if(arr[i] == null) return null;
+    
     return arr[i].search(key).getVal();
   }
   
@@ -135,8 +137,8 @@ class ChainedList{
     }
     
     public String dump(int index){
-      if(next == null) return "";
-      String out = String.format("%d %d %d\n", index, key, val);
+      String out = String.format("%d %s %s\n", index, key, val);
+      if(next == null) return out;
       return out += next.dump(index);
     }
   }

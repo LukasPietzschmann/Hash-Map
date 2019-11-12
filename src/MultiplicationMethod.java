@@ -14,16 +14,17 @@ class MultiplicationMethod extends AbstractHashFunction {
   // Multiplikationsmethode für Tabellengröße N = 2 hoch p
   // mit Parameter s.
   public MultiplicationMethod(int p, int s) {
-    super(1 << p);    // 1 << p entspricht 2 hoch p.
+    super(1 << p);    // 1 << p entspricht 2^p.
     bits = p;
     seed = s;
   }
   
   @Override
+  //FIXME zu hoher index (Testcase: "eins" -> Error)
   public int compute(Object key) {
     Random rnd = new Random();
     final int hash = Math.abs(key.hashCode());
-    final int A = rnd.nextInt((int) Math.pow(2, w) + 1) - 1;
+    final int A = rnd.nextInt((int) Math.pow(2, w));
     final int AS = A * (int) Math.pow(2, w);
     
     return (hash * AS) >>> (w - bits);

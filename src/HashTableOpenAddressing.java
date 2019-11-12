@@ -84,6 +84,7 @@ class HashTableOpenAddressing implements HashTable {
   }
   
   @Override
+  //FIXME liefert nicht das richtige zurück (Testcase: "eins" "eins" -> Error)
   public Object get(Object key) {
     int[] tuple = helperFunc(key);
     if (tuple[0] == -3) {
