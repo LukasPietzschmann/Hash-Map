@@ -14,6 +14,8 @@ class HashTableChaining implements HashTable {
     if(key == null || val == null) return false;
     
     int i = func.compute(key);
+    
+    //Falls an der Stelle im Array noch keine Liste ist wird diese ertsellt und key, val als erstes Objekt eingefügt
     if(arr[i] == null) {
       arr[i] = new ChainedList(key, val);
       return true;
@@ -21,11 +23,13 @@ class HashTableChaining implements HashTable {
     
     ChainedList.ListElement searchRes = arr[i].search(key);
     
+    //Falls key noch nicht enthalten ist wird key, val hinzugefügt
     if(searchRes == null){
       arr[i].add(key, val);
       return true;
     }
     
+    //Falls key schon vorhanden ist wird val überschrieben
     searchRes.setVal(val);
     return true;
   }
@@ -36,8 +40,12 @@ class HashTableChaining implements HashTable {
     
     int i = func.compute(key);
     
+    //Falls an der Stelle i keine Liste steht, ist key nicht in der HashMap
     if(arr[i] == null) return null;
+    //Falls an der Stelle i eine Liste ist, aber key nicht in der Liste ist, ist key auch nicht in der HashMap
+    if(arr[i].search(key) == null) return null;
     
+    //Falls keine vorhergegangene Bedingung korrekt war, muss key in der HashMap sein. Also wird val ausgegeben
     return arr[i].search(key).getVal();
   }
   
@@ -47,8 +55,11 @@ class HashTableChaining implements HashTable {
     
     int i = func.compute(key);
     
+    //Falls an der Stelle i keine Liste steht, ist key nicht in der HashMap
     if (arr[i] == null) return false;
     
+    //Ansonsten wird remove auf der Liste aufgerufen, falls key nicht in der Liste ist gibt remove(key) aus der Liste false zurück.
+    //Falls key in der Liste ist wird true zurückgegeben und der Eintrag gelöscht
     return arr[i].remove(key);
   }
   
@@ -60,7 +71,7 @@ class HashTableChaining implements HashTable {
         out += arr[i].dump(i);
       }
     }
-    System.out.println(out);
+    System.out.print(out);
   }
 }
 
@@ -76,11 +87,13 @@ class ChainedList{
   }
   
   public boolean remove(Object key){
+    if(first == null) return false;
+    
     if(first.key.equals(key)){
       first = first.next;
       return true;
     }
-  
+    
     ListElement itElem = first;
     while (itElem.next != null && !itElem.next.key.equals(key)){
       itElem = itElem.next;
@@ -93,6 +106,7 @@ class ChainedList{
   }
   
   public ListElement search(Object key){
+    if(first == null) return null;
     return first.search(key);
   }
   
@@ -105,27 +119,23 @@ class ChainedList{
     private Object key;
     private Object val;
     
-  
+    
     public ListElement(ListElement next, Object key, Object val) {
       this.next = next;
       this.key = key;
       this.val = val;
     }
-  
+    
     public void setVal(Object val) {
       this.val = val;
     }
-  
+    
     public Object getKey(){
       return key;
     }
-  
+    
     public Object getVal() {
       return val;
-    }
-  
-    public ListElement getNext(){
-      return next;
     }
     
     public ListElement search(Object key){

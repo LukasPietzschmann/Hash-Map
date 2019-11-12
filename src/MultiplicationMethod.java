@@ -1,5 +1,3 @@
-import java.util.Random;
-
 // Streuwertfunktion gemäß Multiplikationsmethode
 // (Implementierung mit 32-Bit-Ganzzahlarithmetik).
 class MultiplicationMethod extends AbstractHashFunction {
@@ -20,13 +18,9 @@ class MultiplicationMethod extends AbstractHashFunction {
   }
   
   @Override
-  //FIXME zu hoher index (Testcase: "eins" -> Error)
   public int compute(Object key) {
-    Random rnd = new Random();
     final int hash = Math.abs(key.hashCode());
-    final int A = rnd.nextInt((int) Math.pow(2, w));
-    final int AS = A * (int) Math.pow(2, w);
     
-    return (hash * AS) >>> (w - bits);
+    return ((hash * seed) >>> (w - bits)) % size();
   }
 }

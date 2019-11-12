@@ -1,8 +1,9 @@
 // Sondierungssequenz gemäß linearer Sondierung.
 class LinearProbing extends AbstractHashSequence {
-  // Lineare Sondierung mit Streuwertfunktion f.
+  //Wert den next() als letztes zurückgegeben hatte
   private int prev;
   
+  // Lineare Sondierung mit Streuwertfunktion f.
   public LinearProbing(HashFunction f) {
     super(f);
   }
@@ -17,4 +18,3 @@ class LinearProbing extends AbstractHashSequence {
     return prev = (prev + 1) % size();
   }
 }
-

@@ -3,7 +3,8 @@ class DoubleHashing extends AbstractHashSequence {
   // Zweite Streuwertfunktion.
   private HashFunction func2;
   private Object key;
-  private int it = 0;
+  //"Index" in der Hash Sequence
+  private int j = 0;
   
   // Doppelte Streuung mit Streuwertfunktionen f1 und f2.
   public DoubleHashing(HashFunction f1, HashFunction f2) {
@@ -14,11 +15,11 @@ class DoubleHashing extends AbstractHashSequence {
   @Override
   public int first(Object key) {
     this.key = key;
-    return (func.compute(key) % size());
+    return func.compute(key);
   }
   
   @Override
   public int next() {
-    return (func.compute(key) + ++it * func2.compute(key)) % size();
+    return (func.compute(key) + ++j * func2.compute(key)) % size();
   }
 }
