@@ -4,19 +4,19 @@ class HashTableChaining implements HashTable {
   private final HashFunction func;
   
   // Streuwerttabelle mit Streuwertfunktion f.
-  public HashTableChaining (HashFunction f) {
+  public HashTableChaining(HashFunction f) {
     arr = new ChainedList[f.size()];
     func = f;
   }
   
   @Override
   public boolean put(Object key, Object val) {
-    if(key == null || val == null) return false;
+    if (key == null || val == null) return false;
     
     int i = func.compute(key);
     
     //Falls an der Stelle im Array noch keine Liste ist wird diese ertsellt und key, val als erstes Objekt eingefügt
-    if(arr[i] == null) {
+    if (arr[i] == null) {
       arr[i] = new ChainedList(key, val);
       return true;
     }
@@ -24,7 +24,7 @@ class HashTableChaining implements HashTable {
     ChainedList.ListElement searchRes = arr[i].search(key);
     
     //Falls key noch nicht enthalten ist wird key, val hinzugefügt
-    if(searchRes == null){
+    if (searchRes == null) {
       arr[i].add(key, val);
       return true;
     }
@@ -36,14 +36,14 @@ class HashTableChaining implements HashTable {
   
   @Override
   public Object get(Object key) {
-    if(key == null) return null;
+    if (key == null) return null;
     
     int i = func.compute(key);
     
     //Falls an der Stelle i keine Liste steht, ist key nicht in der HashMap
-    if(arr[i] == null) return null;
+    if (arr[i] == null) return null;
     //Falls an der Stelle i eine Liste ist, aber key nicht in der Liste ist, ist key auch nicht in der HashMap
-    if(arr[i].search(key) == null) return null;
+    if (arr[i].search(key) == null) return null;
     
     //Falls keine vorhergegangene Bedingung korrekt war, muss key in der HashMap sein. Also wird val ausgegeben
     return arr[i].search(key).getVal();
@@ -51,7 +51,7 @@ class HashTableChaining implements HashTable {
   
   @Override
   public boolean remove(Object key) {
-    if(key == null) return false;
+    if (key == null) return false;
     
     int i = func.compute(key);
     
@@ -67,7 +67,7 @@ class HashTableChaining implements HashTable {
   public void dump() {
     StringBuilder out = new StringBuilder();
     for (int i = 0; i < arr.length; i++) {
-      if(arr[i] != null){
+      if (arr[i] != null) {
         out.append(arr[i].dump(i));
       }
     }
@@ -75,50 +75,51 @@ class HashTableChaining implements HashTable {
   }
 }
 
-class ChainedList{
+
+class ChainedList {
   private ListElement first;
   
   public ChainedList(Object firstKey, Object firstVal) {
     this.first = new ListElement(null, firstKey, firstVal);
   }
   
-  public void add(Object key, Object val){
+  public void add(Object key, Object val) {
     first = new ListElement(first, key, val);
   }
   
-  public boolean remove(Object key){
-    if(first == null) return false;
+  public boolean remove(Object key) {
+    if (first == null) return false;
     
-    if(first.key.equals(key)){
+    if (first.key.equals(key)) {
       first = first.next;
       return true;
     }
     
     ListElement prevKeyElem = first;
-    while (prevKeyElem.next != null && !prevKeyElem.next.key.equals(key)){
+    while (prevKeyElem.next != null && !prevKeyElem.next.key.equals(key)) {
       prevKeyElem = prevKeyElem.next;
     }
     
-    if(prevKeyElem.next == null) return false;
+    if (prevKeyElem.next == null) return false;
     
     prevKeyElem.next = prevKeyElem.next.next;
     return true;
   }
   
-  public ListElement search(Object key){
-    if(first == null) return null;
+  public ListElement search(Object key) {
+    if (first == null) return null;
     return first.search(key);
   }
   
-  public String dump(int index){
+  public String dump(int index) {
+    if (first == null) return "";
     return first.dump(index);
   }
   
-  class ListElement{
+  class ListElement {
     private ListElement next;
     private final Object key;
     private Object val;
-    
     
     public ListElement(ListElement next, Object key, Object val) {
       this.next = next;
@@ -129,22 +130,22 @@ class ChainedList{
     public void setVal(Object val) {
       this.val = val;
     }
-  
+    
     public Object getVal() {
       return val;
     }
     
-    public ListElement search(Object key){
-      if(this.key.equals(key)) {
+    public ListElement search(Object key) {
+      if (this.key.equals(key)) {
         return this;
       }
       if (next == null) return null;
       return next.search(key);
     }
     
-    public String dump(int index){
+    public String dump(int index) {
       String out = String.format("%d %s %s\n", index, key, val);
-      if(next == null) return out;
+      if (next == null) return out;
       return out += next.dump(index);
     }
   }

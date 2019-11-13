@@ -11,6 +11,7 @@ class MultiplicationMethod extends AbstractHashFunction {
   
   // Multiplikationsmethode für Tabellengröße N = 2 hoch p
   // mit Parameter s.
+  //FIXME ab p = 32 1 << p = 1
   public MultiplicationMethod(int p, int s) {
     super(1 << p);    // 1 << p entspricht 2^p.
     bits = p;
