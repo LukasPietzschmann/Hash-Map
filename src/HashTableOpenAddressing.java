@@ -1,186 +1,98 @@
 // Implementierung von Streuwerttabellen mit offener Adressierung.
-class HashTableOpenAddressing implements HashTable {
-  //private static final int contains = -3;
-  //private static final int full = -2;
-  //private static final int doesntContain = -1;
-  //private static final int nothingRemembered = -1;
-
-  private int contains = 0;
-  private int full = 0;
-  private int doesntContain = 0;
-  private int nothingRemembered = -1;
-
-  //contains = -3
-  //full = -2
-  //doesntcontain -1
-  //nothingRemebered = -1
-
-  private HashSequence sequence;
-  private Slot[] array;
-
+public class HashTableOpenAddressing implements HashTable {
+  private HashSequence seq;
+  private Entry[] arr;
+  
   // Streuwerttabelle mit Sondierungsfunktion s.
-  public HashTableOpenAddressing(HashSequence sequence) {
-    this.sequence = sequence;
-    this.array = new Entry[sequence.size()];
+  public HashTableOpenAddressing(HashSequence seq) {
+    this.seq = seq;
+    this.arr = new Entry[seq.size()];
   }
-/*
-  //Hilfsoperation
-  public int[] helperFunc(Object key) {
-    int j = 0;
-    int remembered = nothingRemembered;
-    //int[] tuple = new int[2];
-    //1
-    int index = sequence.first(key);
-    do {
-      //1.2
-      if (array[index] == null) {
-        //1.2.a
-        if (remembered == nothingRemembered) {
-          tuple[0] = doesntContain;
-          tuple[1] = index;
-        } else //1.2.b
-        {
-          tuple[0] = doesntContain;
-          tuple[1] = remembered;
-        }
-
-        return tuple;
-      }
-
-      //3
-      if (array[index] instanceof DelMarker && remembered == nothingRemembered) {
-        remembered = index;
-      }
-      //4
-      if ((array[index] != null) && !(array[index] instanceof DelMarker)) {
-        tuple[0] = contains;
-        tuple[1] = index;
-
-        return tuple;
-      }
-
-      j++;
-      index = sequence.next();
-    } while (j <= sequence.size() - 1);
-
-    //2
-    if (remembered >= 0) {
-      tuple[0] = doesntContain;
-      tuple[1] = remembered;
-
-      return tuple;
+  
+  private HelperObj helperFunc(Object key){
+    int ind = seq.first(key);
+    int remembered = -1;
+    
+    for(int j = 0; j < seq.size() - 1; j++){
+      if(arr[ind] == null) return new HelperObj(remembered == -1?ind:remembered, HelperObj.nichtVorhanden);
+      if(arr[ind].isDelMarker && remembered == -1) remembered = ind;
+      if(!arr[ind].isDelMarker) return new HelperObj(ind, HelperObj.vorhanden);
+      ind = seq.next();
     }
-
-    //4
-    tuple[0] = full;
-    tuple[1] = -2;
-
-    return tuple;
+    
+    if(remembered != -1) return new HelperObj(remembered, HelperObj.nichtVorhanden);
+    return new HelperObj(-1, HelperObj.tabelleVoll);
   }
-*/
-
-
-public int helperFunc(Object key){
-  int j = 0;
-  int remembered = nothingRemembered;
-  int index = sequence.first(key);
-
-  do{
-    /*
-    * Hilfsoperation 1.2 Wenn Tabelle an dee Stelle index leer ist dann liefere
-    * "nicht vorhanden" und entweder den gemerkten Wert(falls es einen gibt)
-    * oder (andernfalls) den Index i zurück
-    */
-    if (array[index] == null){
-      if (remembered == nothingRemembered) {
-        doesntContain = -1;
-        return index;
-      } else {
-        doesntContain = -1;
-        return remembered;
-      }
-    }
-
-    if (array[index] instanceof DelMarker && remembered == nothingRemembered) {
-      remembered = index;
-    }
-
-    if ((array[index] != null) && !(array[index] instanceof DelMarker)) {
-      contains = -3;
-      return index;
-    }
-    ++j;
-    index = sequence.next();
-  }while(j <=sequence.size()-1);
-
-  //2
-  if (remembered >= 0) {
-    doesntContain = -1;
-    return remembered;
-  }
-
-  //4
-  full = -2;
-  return -4;
-}
-
+  
   @Override
   public boolean put(Object key, Object val) {
-    //int[] tuple = helperFunc(key);
-
-    //Wird abgefragt ob key oder val null sind wenn ja wird abgebrochen
-    if(key == null || val == null){
-      return false;
-    }
-    //Wenn die Tabelle nicht voll ist dann wird aus key und value ein neues Objekt angelegt. Mit der Helperfunction
-    // wird geschaut wo Entry e gespeicher werden soll und dann speicher wir das an der Position.
-    if (full >= 0) {
-      Entry e = new Entry(key, val);
-      int i = helperFunc(e.key);
-      array[i] = e;
-      return true;
-    }
-    return false;
+    if(key == null || val == null) return false;
+    
+    HelperObj h = helperFunc(key);
+    if(h.status == HelperObj.tabelleVoll) return false;
+    
+    arr[h.index] = new Entry(false, key, val);
+    return true;
   }
-
+  
   @Override
-  //FIXME liefert nicht das richtige zurück (Testcase: "eins" "eins" -> Error)
   public Object get(Object key) {
-    int index = helperFunc(key);
-
-    if (index >= 0 && contains == -3) {
-      Entry e = (Entry) array[index];
-      return e.val;
+    if(key == null) return null;
+    
+    HelperObj h = helperFunc(key);
+    
+    if(h.status == HelperObj.vorhanden){
+      Entry entry = arr[h.index];
+      return entry.val;
     }
+    
     return null;
   }
-
+  
   @Override
   public boolean remove(Object key) {
-    return false;
+    if(key == null) return false;
+    
+    HelperObj h = helperFunc(key);
+    if(h.status == HelperObj.nichtVorhanden) return false;
+    arr[h.index] = new Entry(true, null, null);
+    
+    return true;
   }
-
+  
   @Override
   public void dump() {
-    System.out.println(array);
+    for (int i = 0; i < arr.length; i++) {
+      if (arr[i] != null && arr[i] instanceof Entry) {
+        Entry entry = arr[i];
+        System.out.println(String.format("%d %s %s", i, entry.key, entry.val));
+      }
+    }
   }
-
-
-  abstract class Slot {
+  
+  private class HelperObj {
+    static final int nichtVorhanden = -1;
+    static final int vorhanden = 1;
+    static final int tabelleVoll = 0;
+    
+    int index;
+    int status;
+    
+    private HelperObj(int index, int status) {
+      this.index = index;
+      this.status = status;
+    }
   }
-
-  class DelMarker extends Slot{
-  }
-
-  class Entry extends Slot{
+  
+  private class Entry {
+    private boolean isDelMarker;
     private Object key;
     private Object val;
-
-    public Entry(Object key, Object val) {
+    
+    private Entry(boolean isDelMarker, Object key, Object val) {
+      this.isDelMarker = isDelMarker;
       this.key = key;
       this.val = val;
     }
   }
-
-
 }
