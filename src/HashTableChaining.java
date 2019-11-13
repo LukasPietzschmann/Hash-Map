@@ -1,7 +1,7 @@
 // Implementierung von Streuwerttabellen mit Verkettung.
 class HashTableChaining implements HashTable {
-  private ChainedList[] arr;
-  private HashFunction func;
+  private final ChainedList[] arr;
+  private final HashFunction func;
   
   // Streuwerttabelle mit Streuwertfunktion f.
   public HashTableChaining (HashFunction f) {
@@ -65,10 +65,10 @@ class HashTableChaining implements HashTable {
   
   @Override
   public void dump() {
-    String out = "";
+    StringBuilder out = new StringBuilder();
     for (int i = 0; i < arr.length; i++) {
       if(arr[i] != null){
-        out += arr[i].dump(i);
+        out.append(arr[i].dump(i));
       }
     }
     System.out.print(out);
@@ -94,14 +94,14 @@ class ChainedList{
       return true;
     }
     
-    ListElement itElem = first;
-    while (itElem.next != null && !itElem.next.key.equals(key)){
-      itElem = itElem.next;
+    ListElement prevKeyElem = first;
+    while (prevKeyElem.next != null && !prevKeyElem.next.key.equals(key)){
+      prevKeyElem = prevKeyElem.next;
     }
     
-    if(itElem == null) return false;
+    if(prevKeyElem.next == null) return false;
     
-    itElem.next = itElem.next.next;
+    prevKeyElem.next = prevKeyElem.next.next;
     return true;
   }
   
@@ -116,7 +116,7 @@ class ChainedList{
   
   class ListElement{
     private ListElement next;
-    private Object key;
+    private final Object key;
     private Object val;
     
     
@@ -129,11 +129,7 @@ class ChainedList{
     public void setVal(Object val) {
       this.val = val;
     }
-    
-    public Object getKey(){
-      return key;
-    }
-    
+  
     public Object getVal() {
       return val;
     }

@@ -1,3 +1,5 @@
+@SuppressWarnings("ALL")
+
 // Abstrakte Oberklasse für Implementierungen von Sondierungsfunktionen.
 abstract class AbstractHashSequence implements HashSequence {
   // Zugrundeliegende Streuwertfunktion.

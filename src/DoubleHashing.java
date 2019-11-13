@@ -1,7 +1,7 @@
 // Sondierungssequenz gemäß doppelter Streuung.
 class DoubleHashing extends AbstractHashSequence {
   // Zweite Streuwertfunktion.
-  private HashFunction func2;
+  private final HashFunction func2;
   private Object key;
   //"Index" in der Hash Sequence
   private int j = 0;

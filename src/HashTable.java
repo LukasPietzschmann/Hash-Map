@@ -1,3 +1,5 @@
+@SuppressWarnings("ALL")
+
 // Schnittstelle einer Streuwerttabelle.
 interface HashTable {
   // Eintrag mit Schlüssel key und Wert val einfügen, sofern key und

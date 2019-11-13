@@ -1,3 +1,5 @@
+@SuppressWarnings("ALL")
+
 // Schnittstelle einer Streuwertfunktion mit Einschränkung des
 // Wertebereichs, die zu jedem Schlüssel einen gültigen Streuwert/Index
 // liefert.

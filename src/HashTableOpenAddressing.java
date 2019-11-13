@@ -1,7 +1,7 @@
 // Implementierung von Streuwerttabellen mit offener Adressierung.
 public class HashTableOpenAddressing implements HashTable {
-  private HashSequence seq;
-  private Entry[] arr;
+  private final HashSequence seq;
+  private final Entry[] arr;
   
   // Streuwerttabelle mit Sondierungsfunktion s.
   public HashTableOpenAddressing(HashSequence seq) {
@@ -15,8 +15,8 @@ public class HashTableOpenAddressing implements HashTable {
     
     for(int j = 0; j < seq.size() - 1; j++){
       if(arr[ind] == null) return new HelperObj(remembered == -1?ind:remembered, HelperObj.nichtVorhanden);
-      if(arr[ind].isDelMarker && remembered == -1) remembered = ind;
-      if(!arr[ind].isDelMarker) return new HelperObj(ind, HelperObj.vorhanden);
+      if(arr[ind].isDelMarker() && remembered == -1) remembered = ind;
+      if(!arr[ind].isDelMarker()) return new HelperObj(ind, HelperObj.vorhanden);
       ind = seq.next();
     }
     
@@ -43,7 +43,7 @@ public class HashTableOpenAddressing implements HashTable {
     
     if(h.status == HelperObj.vorhanden){
       Entry entry = arr[h.index];
-      return entry.val;
+      return entry.getVal();
     }
     
     return null;
@@ -63,36 +63,48 @@ public class HashTableOpenAddressing implements HashTable {
   @Override
   public void dump() {
     for (int i = 0; i < arr.length; i++) {
-      if (arr[i] != null && arr[i] instanceof Entry) {
+      if (arr[i] != null && !arr[i].isDelMarker()) {
         Entry entry = arr[i];
-        System.out.println(String.format("%d %s %s", i, entry.key, entry.val));
+        System.out.println(String.format("%d %s %s", i, entry.getKey(), entry.getVal()));
       }
     }
   }
+}
+
+class HelperObj {
+  static final int nichtVorhanden = -1;
+  static final int vorhanden = 1;
+  static final int tabelleVoll = 0;
   
-  private class HelperObj {
-    static final int nichtVorhanden = -1;
-    static final int vorhanden = 1;
-    static final int tabelleVoll = 0;
-    
-    int index;
-    int status;
-    
-    private HelperObj(int index, int status) {
-      this.index = index;
-      this.status = status;
-    }
+  final int index;
+  final int status;
+  
+  public HelperObj(int index, int status) {
+    this.index = index;
+    this.status = status;
+  }
+}
+
+class Entry {
+  private final boolean isDelMarker;
+  private final Object key;
+  private final Object val;
+  
+  public Entry(boolean isDelMarker, Object key, Object val) {
+    this.isDelMarker = isDelMarker;
+    this.key = key;
+    this.val = val;
   }
   
-  private class Entry {
-    private boolean isDelMarker;
-    private Object key;
-    private Object val;
-    
-    private Entry(boolean isDelMarker, Object key, Object val) {
-      this.isDelMarker = isDelMarker;
-      this.key = key;
-      this.val = val;
-    }
+  public boolean isDelMarker() {
+    return isDelMarker;
+  }
+  
+  public Object getVal() {
+    return val;
+  }
+  
+  public Object getKey() {
+    return key;
   }
 }

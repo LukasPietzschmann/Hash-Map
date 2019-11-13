@@ -1,3 +1,5 @@
+@SuppressWarnings("ALL")
+
 // Schnittstelle einer Sondierungsfunktion für offene Adressierung,
 // die zu jedem Schlüssel eine gültige Sondierungssequenz liefert.
 interface HashSequence {

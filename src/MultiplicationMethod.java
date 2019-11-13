@@ -4,10 +4,10 @@ class MultiplicationMethod extends AbstractHashFunction {
   private static final int w = 32;
   
   // Anzahl p von Bits.
-  private int bits;
+  private final int bits;
   
   // Parameter s = A'.
-  private int seed;
+  private final int seed;
   
   // Multiplikationsmethode für Tabellengröße N = 2 hoch p
   // mit Parameter s.

@@ -2,21 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2071e7b6-30dd-4381-8e83-8af0df38f391" name="Default Changelist" comment="implemented linProb">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HashMap/AbstractHashFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HashMap/AbstractHashFunction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HashMap/AbstractHashSequence.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HashMap/AbstractHashSequence.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/HashMap/ChainedList$ListElement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HashMap/ChainedList$ListElement.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/HashMap/ChainedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HashMap/ChainedList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HashMap/DelMarker.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/HashMap/DoubleHashing.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HashMap/DoubleHashing.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HashMap/Entry.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/HashMap/HashTableChaining.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HashMap/HashTableChaining.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HashMap/HashTableOpenAddressing$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HashMap/HashTableOpenAddressing$Entry.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HashMap/HashTableOpenAddressing$HelperObj.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/HashMap/HashTableOpenAddressing.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HashMap/HashTableOpenAddressing.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HashMap/LinearProbing.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HashMap/LinearProbing.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/HashMap/MultiplicationMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HashMap/MultiplicationMethod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HashMap/QuadraticProbing.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HashMap/QuadraticProbing.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HashMap/WordCount$1HashFunction2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HashMap/WordCount$1HashFunction2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HashMap/WordCount.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HashMap/WordCount.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AbstractHashFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractHashFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AbstractHashSequence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractHashSequence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DoubleHashing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DoubleHashing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HashFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HashFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HashSequence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HashSequence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HashTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HashTableChaining.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HashTableChaining.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HashTableOpenAddressing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HashTableOpenAddressing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MultiplicationMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MultiplicationMethod.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,6 +63,7 @@
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RunDashboard">
@@ -75,7 +82,7 @@
     <configuration name="WordCount" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="WordCount" />
       <module name="HashMap" />
-      <option name="PROGRAM_PARAMETERS" value="l d 200" />
+      <option name="PROGRAM_PARAMETERS" value="q d 200" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -98,7 +105,7 @@
       <workItem from="1573294607666" duration="2119000" />
       <workItem from="1573564234318" duration="4146000" />
       <workItem from="1573569753113" duration="826000" />
-      <workItem from="1573640627991" duration="5313000" />
+      <workItem from="1573640627991" duration="7624000" />
     </task>
     <servers />
   </component>

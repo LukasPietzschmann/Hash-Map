@@ -1,3 +1,5 @@
+@SuppressWarnings("ALL")
+
 // Abstrakte Oberklasse für Implementierungen von Streuwertfunktionen.
 abstract class AbstractHashFunction implements HashFunction {
   // Größe der Streuwerttabelle (Anzahl der Plätze).
