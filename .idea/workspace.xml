@@ -3,13 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2071e7b6-30dd-4381-8e83-8af0df38f391" name="Default Changelist" comment="implemented linProb">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HashMap/ChainedList$ListElement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HashMap/ChainedList$ListElement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HashMap/ChainedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HashMap/ChainedList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HashMap/MultiplicationMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HashMap/MultiplicationMethod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HashMap/WordCount$1HashFunction2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HashMap/WordCount$1HashFunction2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HashMap/WordCount.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HashMap/WordCount.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HashTableChaining.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HashTableChaining.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MultiplicationMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MultiplicationMethod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -105,7 +99,8 @@
       <workItem from="1573294607666" duration="2119000" />
       <workItem from="1573564234318" duration="4146000" />
       <workItem from="1573569753113" duration="826000" />
-      <workItem from="1573640627991" duration="12670000" />
+      <workItem from="1573640627991" duration="12719000" />
+      <workItem from="1573817511395" duration="852000" />
     </task>
     <servers />
   </component>

@@ -57,21 +57,16 @@ public class Test {
       if (line == null) break;
       String[] arr = line.split(" ");
       
-      if(arr[0].equals("dump")){
-        tab.dump();
+      if(arr[0].equals("dump"))tab.dump();
+      else if(arr[0].equals("+")){
+        for (int i = 1; i < arr.length; i++) {
+          Integer val = (Integer) tab.get(arr[i]);
+          if(val == null)tab.put(arr[i], 1);
+          else tab.put(arr[i], val+1);
+        }
       }else if(arr[0].equals("-")){
-        if(tab.remove(arr[1])) System.out.println("Der Eintrag mit dem Key " + arr[1] + " wurde erfolgreich gelöscht");
-        else System.out.println("Der Eintrag mit dem Key " + arr[1] + " existiert nicht");
-      }else if(arr[0].equals("+")){
-        Integer val;
-        boolean put;
-        if((val = (Integer) tab.get(arr[1])) != null) put = tab.put(arr[1], ++val);
-        else put = tab.put(arr[1], 1);
-        if(put) System.out.println("Der Eintrag mit dem Key " + arr[1] + " wurde erfolgreich hinzugefügt");
-        else System.out.println("Der Eintrag mit dem Key " + arr[1] + " konnte nicht hinzugefügt werden");
-      }else{
-        System.out.println("Du Depp hast was falsch eingegeben");
-      }
+        for (int i = 1; i < arr.length; i++) tab.remove(arr[i]);
+      }else System.out.println("Du depp hasch was falsches eingegeben");
     }
   }
 }
