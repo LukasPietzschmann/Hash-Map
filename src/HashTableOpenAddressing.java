@@ -13,10 +13,10 @@ public class HashTableOpenAddressing implements HashTable {
     int ind = seq.first(key);
     int remembered = -1;
     
-    for(int j = 0; j < seq.size() - 1; j++){
+    for(int j = 0; j < seq.size(); j++){
       if(arr[ind] == null) return new HelperObj(remembered == -1?ind:remembered, HelperObj.nichtVorhanden);
       if(arr[ind].isDelMarker() && remembered == -1) remembered = ind;
-      if(!arr[ind].isDelMarker()) return new HelperObj(ind, HelperObj.vorhanden);
+      if(!arr[ind].isDelMarker() && arr[ind].getKey().equals(key)) return new HelperObj(ind, HelperObj.vorhanden);
       ind = seq.next();
     }
     
