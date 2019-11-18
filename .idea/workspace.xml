@@ -3,12 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="2071e7b6-30dd-4381-8e83-8af0df38f391" name="Default Changelist" comment="implemented linProb">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HashMap/Test$1HashFunction2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HashMap/Test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DoubleHashing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DoubleHashing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HashTableOpenAddressing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HashTableOpenAddressing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/desktop.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PointTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PointTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/QuadraticProbing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuadraticProbing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StringTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +65,7 @@
     <configuration name="PointTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="PointTest" />
       <module name="HashMap" />
-      <option name="PROGRAM_PARAMETERS" value="d d 4" />
+      <option name="PROGRAM_PARAMETERS" value="q d 100" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -116,18 +113,12 @@
       <workItem from="1573569753113" duration="826000" />
       <workItem from="1573640627991" duration="12719000" />
       <workItem from="1573817511395" duration="1003000" />
-      <workItem from="1573896484846" duration="4354000" />
+      <workItem from="1573896484846" duration="5453000" />
+      <workItem from="1573920119099" duration="608000" />
+      <workItem from="1573929095871" duration="1364000" />
+      <workItem from="1574073186195" duration="43000" />
     </task>
     <servers />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />

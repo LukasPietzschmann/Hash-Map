@@ -55,7 +55,7 @@ public class PointTest {
     while (true) {
       String line = bf.readLine();
       if (line == null) break;
-      String arr[] = line.split(" ");
+      String[] arr = line.split(" ");
       
       if (arr[0].equals("dump")) tab.dump();
       else if (arr[0].equals("+")) {

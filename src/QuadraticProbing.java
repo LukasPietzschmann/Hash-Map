@@ -19,6 +19,7 @@ class QuadraticProbing extends AbstractHashSequence {
   @Override
   public int next() {
     j += 1;
-    return (int) ((prev + (j + Math.pow(j, 2)) / 2) % size());
+    //return (int) ((prev + (j + Math.pow(j, 2)) / 2) % size());
+     return prev = (prev + j) % size();
   }
 }
