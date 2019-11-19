@@ -9,12 +9,12 @@ abstract class AbstractHashSequence implements HashSequence {
   protected int prev;
   
   // Streuwertfunktion mit f initialisieren.
-  protected AbstractHashSequence (HashFunction f) {
+  protected AbstractHashSequence(HashFunction f) {
     func = f;
   }
   
   // Tabellengröße liefern.
-  public int size () {
+  public int size() {
     return func.size();
   }
 }

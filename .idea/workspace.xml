@@ -3,8 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="2071e7b6-30dd-4381-8e83-8af0df38f391" name="Default Changelist" comment="implemented linProb">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AbstractHashSequence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractHashSequence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DifferentObjTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DifferentObjTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DivisionMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DivisionMethod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HashTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HashTableOpenAddressing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HashTableOpenAddressing.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MultiplicationMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MultiplicationMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/QuadraticProbing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuadraticProbing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PointTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PointTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StringTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StringTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/WordCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WordCount.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,11 +67,19 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.PointTest">
+  <component name="RunManager" selected="Application.StringTest">
+    <configuration name="DifferentObjTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DifferentObjTest" />
+      <module name="HashMap" />
+      <option name="PROGRAM_PARAMETERS" value="q d 30" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PointTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="PointTest" />
       <module name="HashMap" />
-      <option name="PROGRAM_PARAMETERS" value="q d 100" />
+      <option name="PROGRAM_PARAMETERS" value="c m 4 19" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -73,7 +87,7 @@
     <configuration name="StringTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="StringTest" />
       <module name="HashMap" />
-      <option name="PROGRAM_PARAMETERS" value="q d 3" />
+      <option name="PROGRAM_PARAMETERS" value="q m 8 19" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -90,11 +104,13 @@
       <item itemvalue="Application.WordCount" />
       <item itemvalue="Application.StringTest" />
       <item itemvalue="Application.PointTest" />
+      <item itemvalue="Application.DifferentObjTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.PointTest" />
         <item itemvalue="Application.StringTest" />
+        <item itemvalue="Application.PointTest" />
+        <item itemvalue="Application.DifferentObjTest" />
         <item itemvalue="Application.WordCount" />
       </list>
     </recent_temporary>
@@ -118,7 +134,7 @@
       <workItem from="1573929095871" duration="1364000" />
       <workItem from="1574073186195" duration="134000" />
       <workItem from="1574082086290" duration="644000" />
-      <workItem from="1574154098701" duration="275000" />
+      <workItem from="1574154098701" duration="7480000" />
     </task>
     <servers />
   </component>

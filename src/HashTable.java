@@ -19,17 +19,17 @@ interface HashTable {
   // mit diesem Schlüssel gibt.
   // key und val können jeweils einen beliebigen dynamischen Typ
   // besitzen.
-  boolean put (Object key, Object val);
+  boolean put(Object key, Object val);
   
   // Wert zum Schlüssel key liefern, falls vorhanden, sonst null.
   // (Resultatwert null, wenn key gleich null ist.)
-  Object get (Object key);
+  Object get(Object key);
   
   // Eintrag mit Schlüssel key entfernen, falls vorhanden.
   // Resultatwert true, falls erfolgreich (Eintrag war vorhanden),
   // sonst false (Eintrag war nicht vorhanden).
   // (Resultatwert false, wenn key gleich null ist.)
-  boolean remove (Object key);
+  boolean remove(Object key);
   
   // Inhalt der Tabelle zu Testzwecken ausgeben:
   // Pro Eintrag eine Zeile bestehend aus der Nummer des Platzes,
@@ -37,5 +37,5 @@ interface HashTable {
   // Dieses Ausgabeformat muss exakt eingehalten werden.
   // Leere Plätze und Plätze mit Löschmarkierung werden nicht
   // ausgegeben.
-  void dump ();
+  void dump();
 }

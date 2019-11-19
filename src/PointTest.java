@@ -61,15 +61,17 @@ public class PointTest {
       else if (arr[0].equals("+")) {
         Point p = new Point(Integer.parseInt(arr[1]), Integer.parseInt(arr[2]));
         Integer count = (Integer) tab.get(p);
-        if(count == null) tab.put(p, 1);
-        else tab.put(p, count+1);
-      }else if(arr[0].equals("-")){
+        if (count == null) tab.put(p, 1);
+        else tab.put(p, count + 1);
+      }else if (arr[0].equals("-")) {
         Point p = new Point(Integer.parseInt(arr[1]), Integer.parseInt(arr[2]));
         tab.remove(p);
       }else System.out.println("Du depp hasch was falsches eingegeben");
+      tab.dump();
     }
   }
 }
+
 
 class Point {
   private int hash = -1;
@@ -100,7 +102,7 @@ class Point {
   
   @Override
   public boolean equals(Object obj) {
-    if(!(obj instanceof Point)) return false;
+    if (!(obj instanceof Point)) return false;
     Point p = (Point) obj;
     return (p.x == this.x && p.y == this.y);
   }
@@ -108,7 +110,7 @@ class Point {
   @Override
   public int hashCode() {
     if (hash == -1) hash = x + y;
-    return hash;
+    return hash * 1000000;
   }
   
   @Override

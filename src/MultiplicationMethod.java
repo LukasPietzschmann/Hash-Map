@@ -19,7 +19,7 @@ class MultiplicationMethod extends AbstractHashFunction {
   
   @Override
   public int compute(Object key) {
-    final int hash = Math.abs(key.hashCode());
+    final int hash = (key.hashCode() % size + size) % size;
     
     return ((hash * seed) >>> (w - bits)) % size();
   }

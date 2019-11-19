@@ -54,7 +54,7 @@ public class HashTableOpenAddressing implements HashTable {
     if(key == null) return false;
     
     HelperObj h = helperFunc(key);
-    if(h.status == HelperObj.nichtVorhanden) return false;
+    if(h.status == HelperObj.nichtVorhanden || h.status == HelperObj.tabelleVoll) return false;
     arr[h.index] = new Entry(true, null, null);
     
     return true;

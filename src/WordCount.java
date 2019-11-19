@@ -1,5 +1,6 @@
 // Einfaches Testprogramm.
-class WordCount {
+class
+WordCount {
   // Aufruf mit folgenden Kommandozeilenargumenten:
   // 1) Buchstabe c (chaining), l (linear probing),
   //    q (quadratic probing) oder d (double hashing).
@@ -8,7 +9,7 @@ class WordCount {
   // 3) Größe N der Streuwerttabelle (bei Divisionsrestmethode)
   //    oder Anzahl p von Bits (bei Multiplikationsmethode).
   // 4) Parameter s (nur bei Multiplikationsmethode).
-  public static void main (String [] args) throws java.io.IOException {
+  public static void main(String[] args) throws java.io.IOException {
     // Größe N der Streuwerttabelle oder Anzahl p von Bits.
     int Np = Integer.parseInt(args[2]);
     
@@ -31,8 +32,7 @@ class WordCount {
     HashTable tab;
     if (args[0].equals("c")) {
       tab = new HashTableChaining(f);
-    }
-    else {
+    }else {
       HashSequence s;
       switch (args[0]) {
         case "l":
@@ -50,10 +50,11 @@ class WordCount {
           // Zweierpotenz (automatisch bei Multiplikationsmethode)
           // ist, sind alle Werte der Funktion teilerfremd zu N.
           class HashFunction2 extends AbstractHashFunction {
-            public HashFunction2 (int N) {
+            public HashFunction2(int N) {
               super(N);
             }
-            public int compute (Object key) {
+            
+            public int compute(Object key) {
               int h = Math.abs(key.hashCode()) % (size - 1);
               if (h % 2 == 0) h++;
               return h;
@@ -88,7 +89,7 @@ class WordCount {
       // (int-Werte werden bei Bedarf automatisch in Integer-
       // Objekte umgewandelt und umgekehrt.)
       
-      Integer count = (Integer)tab.get(word);
+      Integer count = (Integer) tab.get(word);
       if (count == null) count = 0;
       tab.put(word, count + 1);
     }
