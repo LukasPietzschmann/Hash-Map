@@ -1,6 +1,3 @@
-//FIXME funktionierende config: c d
-//                              c m
-
 // Einfaches Testprogramm.
 class WordCount {
   // Aufruf mit folgenden Kommandozeilenargumenten:
