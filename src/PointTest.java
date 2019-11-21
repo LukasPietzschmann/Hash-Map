@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+@SuppressWarnings("ALL")
 public class PointTest {
   public static void main(String[] args) throws IOException {
     int Np = Integer.parseInt(args[2]);
@@ -70,51 +71,50 @@ public class PointTest {
       tab.dump();
     }
   }
-}
-
-
-class Point {
-  private int hash = -1;
   
-  private int x;
-  private int y;
+  private static class Point {
+    private int hash = -1;
+    
+    private int x;
+    private int y;
   
-  public Point(int x, int y) {
-    this.x = x;
-    this.y = y;
-  }
+    private Point(int x, int y) {
+      this.x = x;
+      this.y = y;
+    }
   
-  public int getX() {
-    return x;
-  }
+    private int getX() {
+      return x;
+    }
   
-  public void setX(int x) {
-    this.x = x;
-  }
+    private void setX(int x) {
+      this.x = x;
+    }
   
-  public int getY() {
-    return y;
-  }
+    private int getY() {
+      return y;
+    }
   
-  public void setY(int y) {
-    this.y = y;
-  }
-  
-  @Override
-  public boolean equals(Object obj) {
-    if (!(obj instanceof Point)) return false;
-    Point p = (Point) obj;
-    return (p.x == this.x && p.y == this.y);
-  }
-  
-  @Override
-  public int hashCode() {
-    if (hash == -1) hash = x + y;
-    return hash * 1000000;
-  }
-  
-  @Override
-  public String toString() {
-    return String.format("(%d / %d)", x, y);
+    private void setY(int y) {
+      this.y = y;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+      if (!(obj instanceof Point)) return false;
+      Point p = (Point) obj;
+      return (p.x == this.x && p.y == this.y);
+    }
+    
+    @Override
+    public int hashCode() {
+      if (hash == -1) hash = x + y;
+      return hash * 1000000;
+    }
+    
+    @Override
+    public String toString() {
+      return String.format("(%d / %d)", x, y);
+    }
   }
 }

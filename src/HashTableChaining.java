@@ -73,80 +73,79 @@ class HashTableChaining implements HashTable {
     }
     System.out.print(out);
   }
-}
-
-
-class ChainedList {
-  private ListElement first;
   
-  public ChainedList(Object firstKey, Object firstVal) {
-    this.first = new ListElement(null, firstKey, firstVal);
-  }
+  private static class ChainedList {
+    private ListElement first;
   
-  public void add(Object key, Object val) {
-    first = new ListElement(first, key, val);
-  }
+    private ChainedList(Object firstKey, Object firstVal) {
+      this.first = new ListElement(null, firstKey, firstVal);
+    }
   
-  public boolean remove(Object key) {
-    if (first == null) return false;
-    
-    if (first.key.equals(key)) {
-      first = first.next;
+    private void add(Object key, Object val) {
+      first = new ListElement(first, key, val);
+    }
+  
+    private boolean remove(Object key) {
+      if (first == null) return false;
+      
+      if (first.key.equals(key)) {
+        first = first.next;
+        return true;
+      }
+      
+      ListElement prevKeyElem = first;
+      while (prevKeyElem.next != null && !prevKeyElem.next.key.equals(key)) {
+        prevKeyElem = prevKeyElem.next;
+      }
+      
+      if (prevKeyElem.next == null) return false;
+      
+      prevKeyElem.next = prevKeyElem.next.next;
       return true;
     }
-    
-    ListElement prevKeyElem = first;
-    while (prevKeyElem.next != null && !prevKeyElem.next.key.equals(key)) {
-      prevKeyElem = prevKeyElem.next;
-    }
-    
-    if (prevKeyElem.next == null) return false;
-    
-    prevKeyElem.next = prevKeyElem.next.next;
-    return true;
-  }
   
-  public ListElement search(Object key) {
-    if (first == null) return null;
-    return first.search(key);
-  }
+    private ListElement search(Object key) {
+      if (first == null) return null;
+      return first.search(key);
+    }
   
-  public String dump(int index) {
-    if (first == null) return "";
-    return first.dump(index);
-  }
-  
-  class ListElement {
-    private ListElement next;
-    private final Object key;
-    private Object val;
-    
-    public ListElement(ListElement next, Object key, Object val) {
-      this.next = next;
-      this.key = key;
-      this.val = val;
+    private String dump(int index) {
+      if (first == null) return "";
+      return first.dump(index);
     }
     
-    public void setVal(Object val) {
-      this.val = val;
-    }
-    
-    public Object getVal() {
-      return val;
-    }
-    
-    public ListElement search(Object key) {
-      if (this.key.equals(key)) {
-        return this;
+    private static class ListElement {
+      private ListElement next;
+      private final Object key;
+      private Object val;
+      
+      private ListElement(ListElement next, Object key, Object val) {
+        this.next = next;
+        this.key = key;
+        this.val = val;
       }
-      if (next == null) return null;
-      return next.search(key);
-    }
-    
-    public String dump(int index) {
-      String out = String.format("%d %s %s\n", index, key, val);
-      if (next == null) return out;
-      return out += next.dump(index);
+  
+      private void setVal(Object val) {
+        this.val = val;
+      }
+  
+      private Object getVal() {
+        return val;
+      }
+  
+      private ListElement search(Object key) {
+        if (this.key.equals(key)) {
+          return this;
+        }
+        if (next == null) return null;
+        return next.search(key);
+      }
+  
+      private String dump(int index) {
+        String out = String.format("%d %s %s\n", index, key, val);
+        if (next == null) return out;
+        return out += next.dump(index);
+      }
     }
   }
 }

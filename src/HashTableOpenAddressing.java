@@ -69,42 +69,42 @@ public class HashTableOpenAddressing implements HashTable {
       }
     }
   }
-}
-
-class HelperObj {
-  static final int nichtVorhanden = -1;
-  static final int vorhanden = 1;
-  static final int tabelleVoll = 0;
   
-  final int index;
-  final int status;
+  private static class HelperObj {
+    static final int nichtVorhanden = -1;
+    static final int vorhanden = 1;
+    static final int tabelleVoll = 0;
+    
+    final int index;
+    final int status;
   
-  public HelperObj(int index, int status) {
-    this.index = index;
-    this.status = status;
-  }
-}
-
-class Entry {
-  private final boolean isDelMarker;
-  private final Object key;
-  private final Object val;
-  
-  public Entry(boolean isDelMarker, Object key, Object val) {
-    this.isDelMarker = isDelMarker;
-    this.key = key;
-    this.val = val;
+    private HelperObj(int index, int status) {
+      this.index = index;
+      this.status = status;
+    }
   }
   
-  public boolean isDelMarker() {
-    return isDelMarker;
-  }
+  private static class Entry {
+    private final boolean isDelMarker;
+    private final Object key;
+    private final Object val;
   
-  public Object getVal() {
-    return val;
-  }
+    private Entry(boolean isDelMarker, Object key, Object val) {
+      this.isDelMarker = isDelMarker;
+      this.key = key;
+      this.val = val;
+    }
   
-  public Object getKey() {
-    return key;
+    private boolean isDelMarker() {
+      return isDelMarker;
+    }
+  
+    private Object getVal() {
+      return val;
+    }
+  
+    private Object getKey() {
+      return key;
+    }
   }
 }

@@ -3,12 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="2071e7b6-30dd-4381-8e83-8af0df38f391" name="Default Changelist" comment="implemented linProb">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AbstractHashSequence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractHashSequence.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DifferentObjTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DifferentObjTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DivisionMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DivisionMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HashTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HashTableChaining.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HashTableChaining.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HashTableOpenAddressing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HashTableOpenAddressing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MultiplicationMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MultiplicationMethod.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PointTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PointTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/StringTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StringTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/WordCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WordCount.java" afterDir="false" />
@@ -134,7 +131,8 @@
       <workItem from="1573929095871" duration="1364000" />
       <workItem from="1574073186195" duration="134000" />
       <workItem from="1574082086290" duration="644000" />
-      <workItem from="1574154098701" duration="7480000" />
+      <workItem from="1574154098701" duration="7524000" />
+      <workItem from="1574332451052" duration="1170000" />
     </task>
     <servers />
   </component>

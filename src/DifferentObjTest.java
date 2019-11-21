@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 
+@SuppressWarnings("ALL")
 public class DifferentObjTest {
   public static void main(String[] args) {
     int Np = Integer.parseInt(args[2]);

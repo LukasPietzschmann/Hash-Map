@@ -1,6 +1,6 @@
+@SuppressWarnings("ALL")
 // Einfaches Testprogramm.
-class
-WordCount {
+class WordCount {
   // Aufruf mit folgenden Kommandozeilenargumenten:
   // 1) Buchstabe c (chaining), l (linear probing),
   //    q (quadratic probing) oder d (double hashing).

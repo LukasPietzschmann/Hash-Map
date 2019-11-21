@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+@SuppressWarnings("ALL")
 public class StringTest {
   public static void main(String[] args) throws IOException {
     int Np = Integer.parseInt(args[2]);
