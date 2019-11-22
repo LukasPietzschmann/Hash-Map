@@ -1,20 +1,12 @@
-@SuppressWarnings("ALL")
-// Einfaches Testprogramm.
+import java.util.Random;
+
 class WordCount {
-  // Aufruf mit folgenden Kommandozeilenargumenten:
-  // 1) Buchstabe c (chaining), l (linear probing),
-  //    q (quadratic probing) oder d (double hashing).
-  // 2) Buchstabe d (Divisionsrestmethode)
-  //    oder m (Multiplikationsmethode).
-  // 3) Größe N der Streuwerttabelle (bei Divisionsrestmethode)
-  //    oder Anzahl p von Bits (bei Multiplikationsmethode).
-  // 4) Parameter s (nur bei Multiplikationsmethode).
   public static void main(String[] args) throws java.io.IOException {
-    // Größe N der Streuwerttabelle oder Anzahl p von Bits.
+    java.io.BufferedReader r = new java.io.BufferedReader(
+            new java.io.InputStreamReader(System.in));
+    args = r.readLine().split(" ");
     int Np = Integer.parseInt(args[2]);
     
-    // Streuwertfunktion mit Einschränkung des Wertebereichs
-    // gemäß Divisionsrest- oder Multiplikationsmethode.
     HashFunction f;
     switch (args[1]) {
       case "d":
@@ -28,7 +20,6 @@ class WordCount {
         return;
     }
     
-    // Streuwerttabelle mit Verkettung oder offener Adressierung.
     HashTable tab;
     if (args[0].equals("c")) {
       tab = new HashTableChaining(f);
@@ -42,13 +33,6 @@ class WordCount {
           s = new QuadraticProbing(f);
           break;
         case "d":
-          // Als zweite Streuwertfunktion für doppelte Streuung
-          // wird eine Funktion verwendet, die immer eine
-          // ungerade Zahl zwischen 1 und N-1 liefert.
-          // Wenn die Tabellengröße N dann entweder eine Primzahl
-          // (ratsam bei Divisionsrestmethode) oder eine
-          // Zweierpotenz (automatisch bei Multiplikationsmethode)
-          // ist, sind alle Werte der Funktion teilerfremd zu N.
           class HashFunction2 extends AbstractHashFunction {
             public HashFunction2(int N) {
               super(N);
@@ -71,30 +55,105 @@ class WordCount {
     // Standardeingabestrom System.in als InputStreamReader
     // und diesen wiederum als BufferedReader "verpacken",
     // damit man bequem zeilenweise lesen kann.
-    java.io.BufferedReader r = new java.io.BufferedReader(
-            new java.io.InputStreamReader(System.in));
     
     // Standardeingabe zeilenweise lesen
     // (Annahme: ein Wort pro Zeile).
     // (readLine kann java.io.IOException werfen.)
+    int currentDataType = 0;
     while (true) {
       String word = r.readLine();
+      
       if (word == null) break;
-      
-      // Überprüfen, ob die Tabelle bereits einen Eintrag mit
-      // Schlüssel word enthält.
-      // Wenn nicht, wird word mit Wert 1 neu eingetragen.
-      // Ansonsten wird der vorhandene Eintrag durch einen neuen
-      // Eintrag mit altem Wert plus 1 ersetzt.
-      // (int-Werte werden bei Bedarf automatisch in Integer-
-      // Objekte umgewandelt und umgekehrt.)
-      
-      Integer count = (Integer) tab.get(word);
-      if (count == null) count = 0;
-      tab.put(word, count + 1);
+      String[] input = word.split(" ");
+      switch (input[0]) {
+        case "add":
+          if (currentDataType == 0)
+            tab.put(input[1], input[2]);
+          if (currentDataType == 1)
+            tab.put(Integer.parseInt(input[1]), input[2]);
+          if (currentDataType == 2)
+            tab.put(Float.parseFloat(input[1]), input[2]);
+          if (currentDataType == 3)
+            tab.put(new TestClass(Integer.parseInt(input[1]), Integer.parseInt(input[2])), input[3]);
+          break;
+        case "get":
+          String out = "";
+          if (currentDataType == 0)
+            System.out.println(tab.get(input[1]));
+          if (currentDataType == 1)
+            System.out.println(tab.get(Integer.parseInt(input[1])));
+          if (currentDataType == 2)
+            System.out.println(tab.get(Float.parseFloat(input[1])));
+          if (currentDataType == 3)
+            System.out.println(tab.get(new TestClass(Integer.parseInt(input[1]), Integer.parseInt(input[2]))));
+          break;
+        case "remove":
+          if (currentDataType == 0)
+            tab.remove(input[1]);
+          if (currentDataType == 1)
+            tab.remove(Integer.parseInt(input[1]));
+          if (currentDataType == 2)
+            tab.remove(Float.parseFloat(input[1]));
+          if (currentDataType == 3)
+            tab.remove(new TestClass(Integer.parseInt(input[1]), Integer.parseInt(input[2])));
+          break;
+        case "dump":
+          tab.dump();
+          break;
+        case "int":
+          currentDataType = 1;
+          break;
+        case "String":
+          currentDataType = 0;
+          break;
+        case "float":
+          currentDataType = 2;
+          break;
+        case "Object":
+          currentDataType = 3;
+          break;
+        default:
+          return;
+      }
     }
-    
-    // Inhalt der Tabelle ausgeben.
-    tab.dump();
   }
 }
+  
+  class TestClass {
+    
+    private int x;
+    private int y;
+    
+    public TestClass(int x, int y) {
+      Random r = new Random();
+      this.x = x;
+      this.y = y;
+    }
+    
+    public void setX(int x) {
+      this.x = x;
+    }
+    
+    public void setY(int y) {
+      this.y = y;
+    }
+    
+    public int add() {
+      return x + y;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+      if (!(obj instanceof TestClass))
+        return false;
+      if (((TestClass) obj).add() == this.add())
+        return true;
+      return false;
+    }
+    
+    @Override
+    public String toString() {
+      return "x + y = " + x + y;
+    }
+  }
+

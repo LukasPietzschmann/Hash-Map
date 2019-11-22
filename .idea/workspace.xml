@@ -3,11 +3,24 @@
   <component name="ChangeListManager">
     <list default="true" id="2071e7b6-30dd-4381-8e83-8af0df38f391" name="Default Changelist" comment="implemented linProb">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DifferentObjTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DifferentObjTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HashTableChaining.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HashTableChaining.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HashTableOpenAddressing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HashTableOpenAddressing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PointTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PointTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StringTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StringTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HashMap/ChainedList$ListElement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HashMap/ChainedList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HashMap/DifferentObjTest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HashMap/DifferentObjTest$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HashMap/DifferentObjTest$1HashFunction2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HashMap/DifferentObjTest$1HashFunction2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HashMap/DifferentObjTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HashMap/DifferentObjTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HashMap/DivisionMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HashMap/DivisionMethod.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HashMap/Entry.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HashMap/HashTableChaining.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HashMap/HashTableChaining.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HashMap/HashTableOpenAddressing.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HashMap/HashTableOpenAddressing.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HashMap/HelperObj.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HashMap/MultiplicationMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HashMap/MultiplicationMethod.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HashMap/Point.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HashMap/PointTest$1HashFunction2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HashMap/PointTest$1HashFunction2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HashMap/PointTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HashMap/PointTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HashMap/StringTest$1HashFunction2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HashMap/StringTest$1HashFunction2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HashMap/StringTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HashMap/StringTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HashMap/WordCount$1HashFunction2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HashMap/WordCount$1HashFunction2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HashMap/WordCount.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HashMap/WordCount.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/WordCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WordCount.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,12 +58,17 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="E:/Android_SDK" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="S:/Workspaces/Intellij" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lukas\Documents\Sync\Studium\Semester3\Algo 2\Praktikum\Praktikum 1\Hash-Map\src" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -64,7 +82,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.StringTest">
+  <component name="RunManager" selected="Application.WordCount">
     <configuration name="DifferentObjTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DifferentObjTest" />
       <module name="HashMap" />
@@ -84,7 +102,7 @@
     <configuration name="StringTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="StringTest" />
       <module name="HashMap" />
-      <option name="PROGRAM_PARAMETERS" value="q m 8 19" />
+      <option name="PROGRAM_PARAMETERS" value="q m 4 4 &lt; words.txt" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -92,7 +110,7 @@
     <configuration name="WordCount" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="WordCount" />
       <module name="HashMap" />
-      <option name="PROGRAM_PARAMETERS" value="q d 200" />
+      <option name="INPUT_FILE" value="$PROJECT_DIR$/src/words.txt" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -105,10 +123,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.WordCount" />
         <item itemvalue="Application.StringTest" />
         <item itemvalue="Application.PointTest" />
         <item itemvalue="Application.DifferentObjTest" />
-        <item itemvalue="Application.WordCount" />
       </list>
     </recent_temporary>
   </component>
@@ -132,7 +150,9 @@
       <workItem from="1574073186195" duration="134000" />
       <workItem from="1574082086290" duration="644000" />
       <workItem from="1574154098701" duration="7524000" />
-      <workItem from="1574332451052" duration="1170000" />
+      <workItem from="1574332451052" duration="2322000" />
+      <workItem from="1574344599262" duration="1407000" />
+      <workItem from="1574356426608" duration="3043000" />
     </task>
     <servers />
   </component>

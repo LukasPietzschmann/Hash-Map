@@ -1,0 +1,42 @@
+d d 16
+add eins 1
+add zwei 1
+add drei 1
+add aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa i
+remove aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+add aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa j
+get aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+add aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaffffffffffffffffffffff k
+get aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaffffffffffffffffffffff
+remove zwei
+remove eins
+add zwei 1
+remove test
+get tets
+dump
+int
+add 5 g
+add 8 h
+remove 8
+get 5
+float
+add 5.2 p
+add 7.8 u
+add 7.8 u
+add 8.8 u
+add 5864554.54854 o
+get 5864554.54854
+add 8.8 u
+remove 8.8
+add 8.8 z
+remove 8.8
+get 8.8
+get 5.2
+add 1.0 l
+Object
+add 2 5 p
+add 2 5 u
+add 3 3 l
+remove 3 3
+get 2 5
+dump
