@@ -10,8 +10,6 @@ class DivisionMethod extends AbstractHashFunction {
   //(Bei h % size lönnten auch negative Zahlen entstehen)
   @Override
   public int compute(Object key) {
-    int h = key.hashCode();
-    
-    return (h % size + size) % size;
+    return (key.hashCode() % size + size) % size;
   }
 }

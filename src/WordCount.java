@@ -141,7 +141,12 @@ class WordCount {
     public int add() {
       return x + y;
     }
-    
+  
+    @Override
+    public int hashCode() {
+      return x + y;
+    }
+  
     @Override
     public boolean equals(Object obj) {
       if (!(obj instanceof TestClass))

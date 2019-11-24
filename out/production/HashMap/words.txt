@@ -1,4 +1,4 @@
-d d 16
+c m 4 4
 add eins 1
 add zwei 1
 add drei 1
